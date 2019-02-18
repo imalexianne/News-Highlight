@@ -12,13 +12,11 @@ def index():
     View root page function that returns the index page and its data
     '''
 
-     # Getting general sources
-    newproduct = get_sources('general')
-    print(newproduct)
-
-    title = 'Home - Welcome to The best News-Highlight Website Online'
-    return render_template('index.html', title = title, general = newproduct)
-    # return render_template('index.html')
+    general_sources = get_sources('general')
+    sports_source = get_sources('sports')
+    technology_source = get_sources('technology')
+    title = 'Home - Welcome to The best New-Highlight Website Online'
+    return render_template('index.html', title = title, general = general_sources, sports = sports_source, technology = technology_source )
 # @app.route('/source/<source_id>')
 # def source(source_id):
 

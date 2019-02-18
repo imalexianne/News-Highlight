@@ -10,12 +10,27 @@
         {% endif %}
     </head>
     <body>
-          <!-- General Sources -->
-        <h3>General Sources</h3>
-        <ul>
-           {% for general_source in popular %}
-               <li>{{ general.title}}</li>
-           {% endfor %}
-       </ul>
+           <!-- General source -->
+           <h3> General sources</h3>
+           <ul>
+              {% for general_source in general %}
+                  <li>{{general_source.name}}</li>
+              {% endfor %}
+          </ul>
+  
+          <!-- Sports source -->
+          <h3> Sports source </h3>
+           <ul>
+              {% for sports_source in sports %}
+                  <li>{{ sports_source.name}}</li>
+              {% endfor %}
+          </ul>
+          <!-- technology source -->
+          <h3>Technology</h3>
+           <ul>
+              {% for technology_source in technology %}
+                  <li>{{ technology_source.name}}</li>
+              {% endfor %}
+          </ul>
     </body>
 </html>

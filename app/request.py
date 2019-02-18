@@ -11,13 +11,13 @@ api_key = app.config['SOURCE_API_KEY']
 base_url = app.config["SOURCE_API_BASE_URL"]
 
 
-def get_sources(general):
-    print(get_sources)
+def get_sources(category):
+    # print(get_sources)
     '''
     Function that gets the json response to our url request
     '''
-    get_sources_url = base_url.format(general,api_key)
-    print(get_sources_url)
+    get_sources_url = base_url.format(category,api_key)
+    # print(get_sources_url)
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -29,6 +29,7 @@ def get_sources(general):
         if get_sources_response['sources']:
             source_results_list = get_sources_response['sources']
             source_results = process_results(source_results_list)
+    return source_results
            
 
 
