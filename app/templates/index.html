@@ -9,7 +9,7 @@
 
         {% block styles%}
         {{ super() }}
-        <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
         {% endblock %}
         <!-- Content block -->
         <meta charset="utf-8">
@@ -20,34 +20,43 @@
         {% endif %}
     </head>
     <body>
+        <h1>WELLCOME TO THE NEWS-HIGHLIGHT ONLONE WEBSITE!!</h1>
           <!-- Content block -->
           {% block content %}
-
+          <h1>WELLCOME TO THE NEWS-HIGHLIGHT ONLONE WEBSITE!!</h1>
+          <div class=general>
            <!-- General source -->
            <h3> General sources</h3>
+           
            <ul>
                 {{ macro.displaySourceList(general)}}
               <!-- {% for general_source in general %}
                   <li>{{general_source.name}}</li>
               {% endfor %} -->
           </ul>
-  
+          </div>
+          <div class=sport>
           <!-- Sports source -->
           <h3> Sports source </h3>
+          
            <ul>
                 {{ macro.displaySourceList(sports)}}
               <!-- {% for sports_source in sports %}
                   <li>{{ sports_source.name}}</li>
               {% endfor %} -->
           </ul>
+          </div>
+          <div class="technology">
           <!-- technology source -->
           <h3>Technology Sources</h3>
+          
            <ul>
                 {{ macro.displaySourceList(technology)}}
               <!-- {% for technology_source in technology %}
                   <li>{{ technology_source.name}}</li>
               {% endfor %} -->
           </ul>
+          </div>
           {% endblock%} 
     </body>
 </html>

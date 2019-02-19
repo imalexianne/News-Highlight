@@ -1,3 +1,21 @@
-/* img{
-  width:100px;
-} */
+body{
+  background-color: navajowhite;
+}
+.general{
+  text-align: center;
+  display:block;
+  border: 50px;
+}
+.sport{
+  text-align: center;
+  display:block;
+  border: 50px;
+}
+.technology{
+  text-align: center;
+  display:block;
+  border: 50px;
+}
+h1{
+  text-align: center
+}
