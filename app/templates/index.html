@@ -2,6 +2,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {% extends 'base.html'%}
+        {% import 'macros.html' as macro%}
+
+        <!-- Styles block -->
+
+        {% block styles%}
+        {{ super() }}
+        <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+        {% endblock %}
+        <!-- Content block -->
         <meta charset="utf-8">
         {% if title %}
         <title> {{ title }}</title>
@@ -10,27 +20,34 @@
         {% endif %}
     </head>
     <body>
+          <!-- Content block -->
+          {% block content %}
+
            <!-- General source -->
            <h3> General sources</h3>
            <ul>
-              {% for general_source in general %}
+                {{ macro.displaySourceList(general)}}
+              <!-- {% for general_source in general %}
                   <li>{{general_source.name}}</li>
-              {% endfor %}
+              {% endfor %} -->
           </ul>
   
           <!-- Sports source -->
           <h3> Sports source </h3>
            <ul>
-              {% for sports_source in sports %}
+                {{ macro.displaySourceList(sports)}}
+              <!-- {% for sports_source in sports %}
                   <li>{{ sports_source.name}}</li>
-              {% endfor %}
+              {% endfor %} -->
           </ul>
           <!-- technology source -->
-          <h3>Technology</h3>
+          <h3>Technology Sources</h3>
            <ul>
-              {% for technology_source in technology %}
+                {{ macro.displaySourceList(technology)}}
+              <!-- {% for technology_source in technology %}
                   <li>{{ technology_source.name}}</li>
-              {% endfor %}
+              {% endfor %} -->
           </ul>
+          {% endblock%} 
     </body>
 </html>
